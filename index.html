@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SITTA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR CLEAN -->
+<nav class="navbar">
+    <h2 class="brand">SITTA</h2>
+
+    <div class="nav-menu">
+        <button onclick="showKatalog()">Katalog</button>
+        <button onclick="showForm()">Pemesanan</button>
+        <button id="darkModeBtn">🌙</button>
+    </div>
+</nav>
+
+<header>
+    <div class="logo-section">
+        <img src="img/logo.png">
+        <div>
+            <h1>SITTA</h1>
+            <p>Pemrograman Berbasis Web</p>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<!-- ================= KATALOG (FULL GRID SEPERTI AWAL) ================= -->
+<section id="page-katalog">
+
+    <div class="module-list">
+
+        <div class="module-card">
+            <img src="img/modul1.png">
+            <h3>Pemrograman Web</h3>
+            <p>HTML, CSS, JS</p>
+            <button onclick="pilihBuku('Pemrograman Web')">Pilih</button>
+        </div>
+
+        <div class="module-card">
+            <img src="img/modul2.png">
+            <h3>Basis Data</h3>
+            <p>SQL & ERD</p>
+            <button onclick="pilihBuku('Basis Data')">Pilih</button>
+        </div>
+
+        <div class="module-card">
+            <img src="img/modul3.png">
+            <h3>Jaringan Komputer</h3>
+            <p>IP & Routing</p>
+            <button onclick="pilihBuku('Jaringan Komputer')">Pilih</button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= PEMESANAN ================= -->
+<section id="page-form" style="display:none;">
+
+<div class="form-table-layout">
+
+    <div class="form-section">
+        <h2>Form Pemesanan</h2>
+
+        <form id="orderForm">
+
+            <input id="nama" placeholder="Nama">
+            <input id="nim" placeholder="NIM">
+
+            <select id="matkul">
+                <option value="">Pilih Buku</option>
+                <option>Pemrograman Web</option>
+                <option>Basis Data</option>
+                <option>Jaringan Komputer</option>
+            </select>
+
+            <input id="jumlah" type="number" placeholder="Jumlah">
+
+            <button type="submit">Tambah</button>
+
+        </form>
+    </div>
+
+    <div class="table-section">
+
+        <input id="searchInput" placeholder="Cari data">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>NIM</th>
+                    <th>Buku</th>
+                    <th>Jumlah</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+
+            <tbody id="tableBody"></tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
